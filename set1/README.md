@@ -98,28 +98,26 @@ inp1 = "this is a test"
 inp2 = "wokka wokka!!!"
 print "Testing Edit Distance : ",set1.edit_distance(inp1,inp2) == 37
 
-a = open('6.txt').read()
-a = base64.b64decode(''.join(a.split('\n')))
+a = open('6.txt').read().split('\n')
+a = base64.b64decode(''.join(a))
 print breakVigenere(a)
 ```
 
 ```python
 #Challenge 7 - AES in ECB Mode
 
-a = open('7.txt').read()
-cip = base64.b64decode(a)
+a = open('7.txt').read().split('\n')
+cipher = base64.b64decode(''.join(a))
 key = "YELLOW SUBMARINE"
 aes = AES.new(key,AES.MODE_ECB)
-print aes.decrypt(cip)
+print aes.decrypt(cipher)
 ```
 
 ```python
 #Challenge 8 - Detect AES in ECB Mode
 
-a = open('8.txt').read()
-a = a.split('\n')
+a = open('8.txt').read().split('\n')
 #Check if two identical blocks?
-BLOCKSIZE = 16
 for j in a:
     k = j.decode('hex')
     if set1.is_ecb_mode(k):
