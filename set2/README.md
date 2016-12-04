@@ -170,10 +170,10 @@ def findcommon(prev,curr):
     return len(s1)
 
 def get_random_length():
-    #common b/w these two gives me no of blocks initial thus the multiple of 16 in length of random
     payload = 'a'
     prev = random_prefix_fixed_key('')
     curr = random_prefix_fixed_key(payload)
+    #common b/w these two gives me no of blocks initial thus the multiple of 16 in length of random
     base = findcommon(prev,curr)
     while True:
         prev = curr
@@ -214,7 +214,6 @@ print break_rpf()
 ```python
 #Challenge 15 - PKCS#7 Padding Validation
 
-print set2.validate_pkcs(set2.pkcs7("ICEICEICEICEICE2",8),8)    
 print set2.validate_pkcs("ICE ICE BABY\x04\x04\x04\x04",16)
 print set2.validate_pkcs("ICE ICE BABY\x05\x05\x05\x05",16)
 print set2.validate_pkcs("ICE ICE BABY\x01\x02\x03\x04",16)
@@ -225,7 +224,6 @@ print set2.validate_pkcs("ICE ICE BABY\x01\x02\x03\x04",16)
 
 PREFIX = "comment1=cooking%20MCs;userdata="
 SUFFIX = ";comment2=%20like%20a%20pound%20of%20bacon"
-KEYSIZE = 16
 KEY = os.urandom(KEYSIZE)
 IV = os.urandom(KEYSIZE)
 
