@@ -246,7 +246,7 @@ def check_hacked(DATA):
 ```
 
 ```python
-#Challenge 15 - Payload Generation
+#Challenge 16 - Payload Generation
 #Logic : Pn = decrypt(C(n))^C(n-1)
 # P'(n) = decrypt(C(n))^C'(n-1)
 # C'(n-1) = C(n-1)^P'(n)^P(n)
